@@ -29,7 +29,7 @@ public class Main {
                 Apartment apartment = new Apartment(city, numberOfRooms, m2, price, phone);
                 list.add(apartment);
 
-                if(city == "София" || city == "Варна" || city == "Бургас"){
+                if(Objects.equals(city, "София") || Objects.equals(city, "Варна") || Objects.equals(city, "Бургас")){
                     if(numberOfRooms==3 && m2>100){
                         aparments.put(Collections.singleton(price), phone);
                     }
@@ -65,7 +65,6 @@ public class Main {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }finally {
-            // Close the file
             output.close();
         }
 
